@@ -514,25 +514,20 @@ $appxPackages = @(
     'Microsoft.Microsoft3DViewer', 'Microsoft.BingSearch', 'Microsoft.WindowsCamera', 'Clipchamp.Clipchamp',
     'Microsoft.WindowsAlarms', 'Microsoft.549981C3F5F10', 'Microsoft.Windows.DevHome',
     'MicrosoftCorporationII.MicrosoftFamily', 'Microsoft.WindowsFeedbackHub', 'Microsoft.GetHelp',
-    'microsoft.windowscommunicationsapps', 'Microsoft.WindowsMaps', 'Microsoft.ZuneVideo',
-    'Microsoft.BingNews', 'Microsoft.MicrosoftOfficeHub', 'Microsoft.Office.OneNote',
-    'Microsoft.OutlookForWindows', 'Microsoft.People', 'Microsoft.Windows.Photos',
-    'Microsoft.PowerAutomateDesktop', 'MicrosoftCorporationII.QuickAssist', 'Microsoft.SkypeApp',
-    'Microsoft.MicrosoftSolitaireCollection', 'Microsoft.MicrosoftStickyNotes', 'MSTeams',
-    'Microsoft.Getstarted', 'Microsoft.Todos', 'Microsoft.WindowsSoundRecorder', 'Microsoft.BingWeather',
-    'Microsoft.ZuneMusic', 'Microsoft.WindowsTerminal', 'Microsoft.Xbox.TCUI', 'Microsoft.XboxApp',
-    'Microsoft.XboxGameOverlay', 'Microsoft.XboxGamingOverlay', 'Microsoft.XboxIdentityProvider',
-    'Microsoft.XboxSpeechToTextOverlay', 'Microsoft.GamingApp', 'Microsoft.YourPhone', 'Microsoft.OneDrive',
-    'Microsoft.549981C3F5F10', 'Microsoft.MixedReality.Portal', 'Microsoft.ScreenSketch'
+    'microsoft.windowscommunicationsapps', 'Microsoft.WindowsMaps', 'Microsoft.MicrosoftOfficeHub', 
+    'Microsoft.Office.OneNote', 'Microsoft.People', 'Microsoft.PowerAutomateDesktop', 
+    'MicrosoftCorporationII.QuickAssist', 'Microsoft.SkypeApp', 'Microsoft.MicrosoftSolitaireCollection', 
+    'Microsoft.MicrosoftStickyNotes', 'MSTeams', 'Microsoft.Getstarted', 'Microsoft.Todos', 'Microsoft.WindowsSoundRecorder', 
+    'Microsoft.YourPhone', 'Microsoft.OneDrive','Microsoft.549981C3F5F10', 'Microsoft.MixedReality.Portal', 'Microsoft.ScreenSketch'
     'Microsoft.Windows.Ai.Copilot.Provider', 'Microsoft.Copilot', 'Microsoft.Copilot_8wekyb3d8bbwe',
-    'Microsoft.WindowsMeetNow', 'Microsoft.WindowsStore', 'Microsoft.Paint', 'Microsoft.MSPaint'
+    'Microsoft.WindowsMeetNow', 'Microsoft.Paint', 'Microsoft.MSPaint'
 )
 
 # Define Windows Capabilities
 $capabilities = @(
-    'Browser.InternetExplorer', 'MathRecognizer', 'OpenSSH.Client',
-    'Microsoft.Windows.PowerShell.ISE', 'App.Support.QuickAssist', 'App.StepsRecorder',
-    'Media.WindowsMediaPlayer', 'Microsoft.Windows.WordPad', 'Microsoft.Windows.MSPaint'
+    'Browser.InternetExplorer', 'MathRecognizer','Microsoft.Windows.PowerShell.ISE', 
+    'App.Support.QuickAssist', 'App.StepsRecorder','Media.WindowsMediaPlayer', 
+    'Microsoft.Windows.WordPad', 'Microsoft.Windows.MSPaint'
 )
 
 # Apply registry mods to prevent reinstallation and disable features
@@ -548,9 +543,6 @@ Windows Registry Editor Version 5.00
 
 ; Prevents Dev Home Installation
 [-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\Orchestrator\UScheduler_Oobe\DevHomeUpdate]
-
-; Prevents New Outlook for Windows Installation
-[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\Orchestrator\UScheduler_Oobe\OutlookUpdate]
 
 ; Prevents Chat Auto Installation
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Communications]
@@ -802,10 +794,6 @@ Windows Registry Editor Version 5.00
 ; Disables the Advertising ID for All Users
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AdvertisingInfo]
 "DisabledByGroupPolicy"=dword:00000001
-
-; Disable Account Info
-[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\userAccountInformation]
-"Value"="Deny"
 "@
     # Write the registry changes to a file and silently import it using regedit
     Set-Content -Path "$env:TEMP\Recommended_Privacy_Settings.reg" -Value $MultilineComment -Force
@@ -894,11 +882,9 @@ Windows Registry Editor Version 5.00
 
 ; Disable Automatic Updates (Only Check for Updates Manually)
 ; Notify Before Downloading and Installing Updates
-; Enable Notifications for Security Updates Only (Do Not Auto-Download)
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU]
 "NoAutoUpdate"=dword:00000001
 "AUOptions"=dword:00000002
-"AutoInstallMinorUpdates"=dword:00000000
 
 ; Prevent Automatic Upgrade from Windows 10 22H2 to Windows 11 (Manual Upgrade Still Allowed)
 ; Delay Feature and Quality updates for 1 year from install.
@@ -1023,9 +1009,6 @@ Windows Registry Editor Version 5.00
 ; Prevents Dev Home Installation
 [-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\Orchestrator\UScheduler_Oobe\DevHomeUpdate]
 
-; Prevents New Outlook for Windows Installation
-[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\Orchestrator\UScheduler_Oobe\OutlookUpdate]
-
 ; Prevents Chat Auto Installation and Removes Chat Icon
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Communications]
 "ConfigureChatAutoInstall"=dword:00000000
@@ -1111,13 +1094,6 @@ Windows Registry Editor Version 5.00
 "Priority"=dword:00000006
 "Scheduling Category"="High"
 
-; disable startup sound
-[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Authentication\LogonUI\BootAnimation]
-"DisableStartupSound"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\EditionOverrides]
-"UserSetting_DisableStartupSound"=dword:00000001
-
 ; disable device installation settings
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Device Metadata]
 "PreventDeviceMetadataFromNetwork"=dword:00000001
@@ -1162,14 +1138,6 @@ Windows Registry Editor Version 5.00
 "HideSCAMeetNow"=dword:00000001
 "NoStartMenuMFUprogramsList"=-
 "NoInstrumentation"=-
-
-; remove windows widgets from taskbar
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Dsh] 
-"AllowNewsAndInterests"=dword:00000000
-
-; remove news and interests from Taskbar
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Feeds]
-"EnableFeeds"=dword:00000000
 
 ; SYSTEM
 ; turn on hardware accelerated gpu scheduling
@@ -1221,10 +1189,6 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy]
 "LetAppsRunInBackground"=dword:00000002
 
-; disable widgets
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\NewsAndInterests\AllowNewsAndInterests]
-"value"=dword:00000000
-
 ; NVIDIA
 ; enable old nvidia sharpening
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\nvlddmkm\FTS]
@@ -1234,9 +1198,6 @@ Windows Registry Editor Version 5.00
 ; remove 3d objects
 [-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}]
 [-HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}]
-
-; Remove Home Folder
-[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace\{f874310e-b6b7-47dc-bc84-b9e6b38f5903}]
 
 [HKEY_USERS\.DEFAULT\Control Panel\Mouse]
 "MouseSpeed"="0"
@@ -1681,10 +1642,6 @@ Windows Registry Editor Version 5.00
 "ShowCloudFilesInQuickAccess"=dword:00000000
 "EnableAutoTray"=dword:00000000
 
-; enable display full path in the title bar
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\CabinetState]
-"FullPath"=dword:00000001
-
 ; HARDWARE AND SOUND
 ; sound communications do nothing
 [HKEY_CURRENT_USER\Software\Microsoft\Multimedia\Audio]
@@ -1887,11 +1844,9 @@ Windows Registry Editor Version 5.00
 
 ; disable use dynamic lighting on my devices
 ; disable compatible apps in the forground always control lighting
-; disable match my windows accent color
 [HKEY_CURRENT_USER\Software\Microsoft\Lighting]
 "AmbientLightingEnabled"=dword:00000000
 "ControlledByForegroundApp"=dword:00000000
-"UseSystemAccentColor"=dword:00000000
 
 ; DEVICES
 ; disable let windows manage my default printer
@@ -1916,11 +1871,9 @@ Windows Registry Editor Version 5.00
 "ToastEnabled"=dword:00000000
 "LockScreenToastEnabled"=dword:00000000
 
-; Disable Allow Notifications to Play Sounds
 ; Disable Notifications on Lock Screen
 ; Disable Show Reminders and VoIP Calls Notifications on Lock Screen
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings]
-"NOC_GLOBAL_SETTING_ALLOW_NOTIFICATION_SOUND"=dword:00000000
 "NOC_GLOBAL_SETTING_ALLOW_TOASTS_ABOVE_LOCK"=dword:00000000
 "NOC_GLOBAL_SETTING_ALLOW_CRITICAL_TOASTS_ABOVE_LOCK"=dword:00000000
 
@@ -1983,21 +1936,10 @@ Windows Registry Editor Version 5.00
 "SystemPaneSuggestionsEnabled"=dword:00000000
 
 ; OTHER
-; remove gallery
-[HKEY_CURRENT_USER\Software\Classes\CLSID\{e88865ea-0e1c-4e20-9aa6-edcd0212c87c}]
-"System.IsPinnedToNameSpaceTree"=dword:00000000
-
-; restore the classic context menu
-[HKEY_CURRENT_USER\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32]
-@=""
 
 ; removes OneDrive Setup
 [-HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run]
 "OneDriveSetup"=-
-
-; Hides the Try New Outlook Button
-[HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Outlook\Options\General]
-"HideNewOutlookToggle"=dword:00000000
 "@
     Set-Content -Path "$env:TEMP\Optimize_User_Registry.reg" -Value $MultilineComment -Force
     Regedit.exe /S "$env:TEMP\Optimize_User_Registry.reg"
