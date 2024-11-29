@@ -11,30 +11,6 @@
         <AcceptEula>true</AcceptEula>
       </UserData>
       <RunSynchronous>
-        <RunSynchronousCommand wcm:action="add">
-          <Order>1</Order>
-          <Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassTPMCheck /t REG_DWORD /d 1 /f</Path>
-        </RunSynchronousCommand>
-        <RunSynchronousCommand wcm:action="add">
-          <Order>2</Order>
-          <Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassSecureBootCheck /t REG_DWORD /d 1 /f</Path>
-        </RunSynchronousCommand>
-        <RunSynchronousCommand wcm:action="add">
-          <Order>3</Order>
-          <Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassStorageCheck /t REG_DWORD /d 1 /f</Path>
-        </RunSynchronousCommand>
-        <RunSynchronousCommand wcm:action="add">
-          <Order>4</Order>
-          <Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassCPUCheck /t REG_DWORD /d 1 /f</Path>
-        </RunSynchronousCommand>
-        <RunSynchronousCommand wcm:action="add">
-          <Order>5</Order>
-          <Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassRAMCheck /t REG_DWORD /d 1 /f</Path>
-        </RunSynchronousCommand>
-        <RunSynchronousCommand wcm:action="add">
-          <Order>6</Order>
-          <Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassDiskCheck /t REG_DWORD /d 1 /f</Path>
-        </RunSynchronousCommand>
         <!--Disables Windows Defender from Starting -->
         <RunSynchronousCommand wcm:action="add">
           <Order>7</Order>
@@ -259,30 +235,6 @@
         <AcceptEula>true</AcceptEula>
       </UserData>
       <RunSynchronous>
-        <RunSynchronousCommand wcm:action="add">
-          <Order>1</Order>
-          <Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassTPMCheck /t REG_DWORD /d 1 /f</Path>
-        </RunSynchronousCommand>
-        <RunSynchronousCommand wcm:action="add">
-          <Order>2</Order>
-          <Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassSecureBootCheck /t REG_DWORD /d 1 /f</Path>
-        </RunSynchronousCommand>
-        <RunSynchronousCommand wcm:action="add">
-          <Order>3</Order>
-          <Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassStorageCheck /t REG_DWORD /d 1 /f</Path>
-        </RunSynchronousCommand>
-        <RunSynchronousCommand wcm:action="add">
-          <Order>4</Order>
-          <Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassCPUCheck /t REG_DWORD /d 1 /f</Path>
-        </RunSynchronousCommand>
-        <RunSynchronousCommand wcm:action="add">
-          <Order>5</Order>
-          <Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassRAMCheck /t REG_DWORD /d 1 /f</Path>
-        </RunSynchronousCommand>
-        <RunSynchronousCommand wcm:action="add">
-          <Order>6</Order>
-          <Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassDiskCheck /t REG_DWORD /d 1 /f</Path>
-        </RunSynchronousCommand>
         <!--Disables Windows Defender from Starting -->
         <RunSynchronousCommand wcm:action="add">
           <Order>7</Order>
@@ -507,30 +459,6 @@
         <AcceptEula>true</AcceptEula>
       </UserData>
       <RunSynchronous>
-        <RunSynchronousCommand wcm:action="add">
-          <Order>1</Order>
-          <Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassTPMCheck /t REG_DWORD /d 1 /f</Path>
-        </RunSynchronousCommand>
-        <RunSynchronousCommand wcm:action="add">
-          <Order>2</Order>
-          <Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassSecureBootCheck /t REG_DWORD /d 1 /f</Path>
-        </RunSynchronousCommand>
-        <RunSynchronousCommand wcm:action="add">
-          <Order>3</Order>
-          <Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassStorageCheck /t REG_DWORD /d 1 /f</Path>
-        </RunSynchronousCommand>
-        <RunSynchronousCommand wcm:action="add">
-          <Order>4</Order>
-          <Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassCPUCheck /t REG_DWORD /d 1 /f</Path>
-        </RunSynchronousCommand>
-        <RunSynchronousCommand wcm:action="add">
-          <Order>5</Order>
-          <Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassRAMCheck /t REG_DWORD /d 1 /f</Path>
-        </RunSynchronousCommand>
-        <RunSynchronousCommand wcm:action="add">
-          <Order>6</Order>
-          <Path>reg.exe add "HKLM\SYSTEM\Setup\LabConfig" /v BypassDiskCheck /t REG_DWORD /d 1 /f</Path>
-        </RunSynchronousCommand>
         <!--Disables Windows Defender from Starting -->
         <RunSynchronousCommand wcm:action="add">
           <Order>7</Order>
@@ -1616,23 +1544,19 @@ $appxPackages = @(
     'Microsoft.Microsoft3DViewer', 'Microsoft.BingSearch', 'Microsoft.WindowsCamera', 'Clipchamp.Clipchamp',
     'Microsoft.WindowsAlarms', 'Microsoft.549981C3F5F10', 'Microsoft.Windows.DevHome',
     'MicrosoftCorporationII.MicrosoftFamily', 'Microsoft.WindowsFeedbackHub', 'Microsoft.GetHelp',
-    'microsoft.windowscommunicationsapps', 'Microsoft.WindowsMaps', 'Microsoft.ZuneVideo',
-    'Microsoft.BingNews', 'Microsoft.MicrosoftOfficeHub', 'Microsoft.Office.OneNote',
-    'Microsoft.OutlookForWindows', 'Microsoft.People', 'Microsoft.Windows.Photos',
+    'microsoft.windowscommunicationsapps', 'Microsoft.WindowsMaps', 'Microsoft.Paint', 'Microsoft.MSPaint'
+    'Microsoft.Office.OneNote', 'Microsoft.People', 'Microsoft.MicrosoftOfficeHub',
     'Microsoft.PowerAutomateDesktop', 'MicrosoftCorporationII.QuickAssist', 'Microsoft.SkypeApp',
     'Microsoft.MicrosoftSolitaireCollection', 'Microsoft.MicrosoftStickyNotes', 'MSTeams',
-    'Microsoft.Getstarted', 'Microsoft.Todos', 'Microsoft.WindowsSoundRecorder', 'Microsoft.BingWeather',
-    'Microsoft.ZuneMusic', 'Microsoft.WindowsTerminal', 'Microsoft.Xbox.TCUI', 'Microsoft.XboxApp',
-    'Microsoft.XboxGameOverlay', 'Microsoft.XboxGamingOverlay', 'Microsoft.XboxIdentityProvider',
-    'Microsoft.XboxSpeechToTextOverlay', 'Microsoft.GamingApp', 'Microsoft.YourPhone', 'Microsoft.OneDrive',
-    'Microsoft.549981C3F5F10', 'Microsoft.MixedReality.Portal', 'Microsoft.ScreenSketch'
-    'Microsoft.Windows.Ai.Copilot.Provider', 'Microsoft.Copilot', 'Microsoft.Copilot_8wekyb3d8bbwe',
-    'Microsoft.WindowsMeetNow', 'Microsoft.WindowsStore', 'Microsoft.Paint', 'Microsoft.MSPaint'
+    'Microsoft.Getstarted', 'Microsoft.Todos', 'Microsoft.Windows.Ai.Copilot.Provider', 
+    'Microsoft.OneDrive', 'Microsoft.549981C3F5F10', 'Microsoft.WindowsSoundRecorder',
+    'Microsoft.MixedReality.Portal', 'Microsoft.ScreenSketch', 'Microsoft.Copilot',
+    'Microsoft.Copilot_8wekyb3d8bbwe', 'Microsoft.WindowsMeetNow'
 )
 
 # Define Windows Capabilities
 $capabilities = @(
-    'MathRecognizer', 'OpenSSH.Client',
+    'MathRecognizer',
     'Microsoft.Windows.PowerShell.ISE', 'App.Support.QuickAssist', 'App.StepsRecorder',
     'Media.WindowsMediaPlayer', 'Microsoft.Windows.WordPad', 'Microsoft.Windows.MSPaint'
 )
@@ -1650,9 +1574,6 @@ Windows Registry Editor Version 5.00
 
 ; Prevents Dev Home Installation
 [-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\Orchestrator\UScheduler_Oobe\DevHomeUpdate]
-
-; Prevents New Outlook for Windows Installation
-[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\Orchestrator\UScheduler_Oobe\OutlookUpdate]
 
 ; Prevents Chat Auto Installation
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Communications]
@@ -2002,17 +1923,6 @@ Windows Registry Editor Version 5.00
 "AUOptions"=dword:00000002
 "AutoInstallMinorUpdates"=dword:00000000
 
-; Prevent Automatic Upgrade from Windows 10 22H2 to Windows 11 (Manual Upgrade Still Allowed)
-; Delay Feature and Quality updates for 1 year from install.
-[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate]
-"TargetReleaseVersion"=dword:00000001
-"TargetReleaseVersionInfo"="22H2"
-"ProductVersion"="Windows 10"
-"DeferFeatureUpdates"=dword:00000001
-"DeferFeatureUpdatesPeriodInDays"=dword:0000016d
-"DeferQualityUpdates"=dword:00000001
-"DeferQualityUpdatesPeriodInDays"=dword:00000007
-
 ; Disables allowing downloads from other PCs (Delivery Optimization)
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization]
 "DODownloadMode"=dword:00000000
@@ -2125,9 +2035,6 @@ Windows Registry Editor Version 5.00
 ; Prevents Dev Home Installation
 [-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\Orchestrator\UScheduler_Oobe\DevHomeUpdate]
 
-; Prevents New Outlook for Windows Installation
-[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\Orchestrator\UScheduler_Oobe\OutlookUpdate]
-
 ; Prevents Chat Auto Installation and Removes Chat Icon
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Communications]
 "ConfigureChatAutoInstall"=dword:00000000
@@ -2212,13 +2119,6 @@ Windows Registry Editor Version 5.00
 "GPU Priority"=dword:00000008
 "Priority"=dword:00000006
 "Scheduling Category"="High"
-
-; disable startup sound
-[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Authentication\LogonUI\BootAnimation]
-"DisableStartupSound"=dword:00000001
-
-[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\EditionOverrides]
-"UserSetting_DisableStartupSound"=dword:00000001
 
 ; disable device installation settings
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Device Metadata]
@@ -2305,9 +2205,6 @@ Windows Registry Editor Version 5.00
 ; remove 3d objects
 [-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}]
 [-HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}]
-
-; Remove Home Folder
-[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace\{f874310e-b6b7-47dc-bc84-b9e6b38f5903}]
 
 [HKEY_USERS\.DEFAULT\Control Panel\Mouse]
 "MouseSpeed"="0"
@@ -2668,16 +2565,8 @@ Windows Registry Editor Version 5.00
 ; APPEARANCE AND PERSONALIZATION
 ; open file explorer to this pc
 ; show file name extensions
-; disable display file size information in folder tips
-; disable show pop-up description for folder and desktop items
-; disable show preview handlers in preview pane
-; disable show status bar
 ; disable show sync provider notifications
 ; disable use sharing wizard
-; disable animations in the taskbar
-; enable show thumbnails instead of icons
-; disable show translucent selection rectangle
-; disable use drop shadows for icon labels on the desktop
 ; more pins personalization start
 ; disable show account-related notifications
 ; disable show recently opened items in start, jump lists and file explorer
@@ -2686,38 +2575,20 @@ Windows Registry Editor Version 5.00
 ; remove task view from taskbar
 ; remove copilot from taskbar
 ; disable show recommendations for tips shortcuts new apps and more
-; disable share any window from my taskbar
-; disable snap window settings - SnapAssist to JointResize Entries
 ; alt tab open windows only
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "LaunchTo"=dword:00000001
 "HideFileExt"=dword:00000000
-"FolderContentsInfoTip"=dword:00000000
-"ShowInfoTip"=dword:00000000
-"ShowPreviewHandlers"=dword:00000000
-"ShowStatusBar"=dword:00000000
 "ShowSyncProviderNotifications"=dword:00000000
 "SharingWizardOn"=dword:00000000
-"TaskbarAnimations"=dword:0
-"IconsOnly"=dword:0
-"ListviewAlphaSelect"=dword:0
-"ListviewShadow"=dword:0
 "Start_Layout"=dword:00000001
 "Start_AccountNotifications"=dword:00000000
 "Start_TrackDocs"=dword:00000000 
-"TaskbarAl"=dword:00000000
 "TaskbarMn"=dword:00000000
 "ShowTaskViewButton"=dword:00000000
 "ShowCopilotButton"=dword:00000000
-"Start_IrisRecommendations"=dword:00000000
-"TaskbarSn"=dword:00000000
-"SnapAssist"=dword:00000000
 "DITest"=dword:00000000
-"EnableSnapBar"=dword:00000000
 "EnableTaskGroups"=dword:00000000
-"EnableSnapAssistFlyout"=dword:00000000
-"SnapFill"=dword:00000000
-"JointResize"=dword:00000000
 "MultiTaskingAltTabFilter"=dword:00000003
 
 ; hide frequent folders in quick access
@@ -2727,10 +2598,6 @@ Windows Registry Editor Version 5.00
 "ShowFrequent"=dword:00000000
 "ShowCloudFilesInQuickAccess"=dword:00000000
 "EnableAutoTray"=dword:00000000
-
-; enable display full path in the title bar
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\CabinetState]
-"FullPath"=dword:00000001
 
 ; HARDWARE AND SOUND
 ; sound communications do nothing
@@ -2762,21 +2629,10 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects]
 "VisualFXSetting"=dword:3
 
-; disable animate controls and elements inside windows
-; disable fade or slide menus into view
-; disable fade or slide tooltips into view
-; disable fade out menu items after clicking
-; disable show shadows under mouse pointer
-; disable show shadows under windows
-; disable slide open combo boxes
-; disable smooth-scroll list boxes
-; enable smooth edges of screen fonts
 ; 100% dpi scaling
 ; disable fix scaling for apps
 ; disable menu show delay
 [HKEY_CURRENT_USER\Control Panel\Desktop]
-"UserPreferencesMask"=hex(2):90,12,03,80,10,00,00,00
-"FontSmoothing"="2"
 "LogPixels"=dword:00000060
 "Win8DpiScaling"=dword:00000001
 "EnablePerProcessSystemDPI"=dword:00000000
@@ -2928,10 +2784,6 @@ Windows Registry Editor Version 5.00
 "NoInstrumentation"=-
 "HideSCAMeetNow"=dword:00000001
 
-; remove search from taskbar
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
-"SearchboxTaskbarMode"=dword:00000000
-
 ; disable use dynamic lighting on my devices
 ; disable compatible apps in the forground always control lighting
 ; disable match my windows accent color
@@ -3030,13 +2882,6 @@ Windows Registry Editor Version 5.00
 "SystemPaneSuggestionsEnabled"=dword:00000000
 
 ; OTHER
-; remove gallery
-[HKEY_CURRENT_USER\Software\Classes\CLSID\{e88865ea-0e1c-4e20-9aa6-edcd0212c87c}]
-"System.IsPinnedToNameSpaceTree"=dword:00000000
-
-; restore the classic context menu
-[HKEY_CURRENT_USER\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32]
-@=""
 
 ; removes OneDrive Setup
 [-HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run]
@@ -3452,7 +3297,7 @@ function Set-ServiceStartup {
     'AJRouter', 'AppVClient', 'AssignedAccessManagerSvc', 
     'DiagTrack', 'DialogBlockingService', 'NetTcpPortSharing',
     'RemoteAccess', 'RemoteRegistry', 'shpamsvc', 
-    'ssh-agent', 'tzautoupdate', 'uhssvc',
+    'tzautoupdate', 'uhssvc',
     'UevAgentService'
 	)
 
@@ -4049,16 +3894,8 @@ Windows Registry Editor Version 5.00
 ; APPEARANCE AND PERSONALIZATION
 ; open file explorer to this pc
 ; show file name extensions
-; disable display file size information in folder tips
-; disable show pop-up description for folder and desktop items
-; disable show preview handlers in preview pane
-; disable show status bar
 ; disable show sync provider notifications
 ; disable use sharing wizard
-; disable animations in the taskbar
-; enable show thumbnails instead of icons
-; disable show translucent selection rectangle
-; disable use drop shadows for icon labels on the desktop
 ; more pins personalization start
 ; disable show account-related notifications
 ; disable show recently opened items in start, jump lists and file explorer
@@ -4067,38 +3904,20 @@ Windows Registry Editor Version 5.00
 ; remove task view from taskbar
 ; remove copilot from taskbar
 ; disable show recommendations for tips shortcuts new apps and more
-; disable share any window from my taskbar
-; disable snap window settings - SnapAssist to JointResize Entries
 ; alt tab open windows only
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
 "LaunchTo"=dword:00000001
 "HideFileExt"=dword:00000000
-"FolderContentsInfoTip"=dword:00000000
-"ShowInfoTip"=dword:00000000
-"ShowPreviewHandlers"=dword:00000000
-"ShowStatusBar"=dword:00000000
 "ShowSyncProviderNotifications"=dword:00000000
 "SharingWizardOn"=dword:00000000
-"TaskbarAnimations"=dword:0
-"IconsOnly"=dword:0
-"ListviewAlphaSelect"=dword:0
-"ListviewShadow"=dword:0
 "Start_Layout"=dword:00000001
 "Start_AccountNotifications"=dword:00000000
 "Start_TrackDocs"=dword:00000000 
-"TaskbarAl"=dword:00000000
 "TaskbarMn"=dword:00000000
 "ShowTaskViewButton"=dword:00000000
 "ShowCopilotButton"=dword:00000000
-"Start_IrisRecommendations"=dword:00000000
-"TaskbarSn"=dword:00000000
-"SnapAssist"=dword:00000000
 "DITest"=dword:00000000
-"EnableSnapBar"=dword:00000000
 "EnableTaskGroups"=dword:00000000
-"EnableSnapAssistFlyout"=dword:00000000
-"SnapFill"=dword:00000000
-"JointResize"=dword:00000000
 "MultiTaskingAltTabFilter"=dword:00000003
 
 ; hide frequent folders in quick access
@@ -4108,10 +3927,6 @@ Windows Registry Editor Version 5.00
 "ShowFrequent"=dword:00000000
 "ShowCloudFilesInQuickAccess"=dword:00000000
 "EnableAutoTray"=dword:00000000
-
-; enable display full path in the title bar
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\CabinetState]
-"FullPath"=dword:00000001
 
 ; HARDWARE AND SOUND
 ; sound communications do nothing
@@ -4143,21 +3958,10 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects]
 "VisualFXSetting"=dword:3
 
-; disable animate controls and elements inside windows
-; disable fade or slide menus into view
-; disable fade or slide tooltips into view
-; disable fade out menu items after clicking
-; disable show shadows under mouse pointer
-; disable show shadows under windows
-; disable slide open combo boxes
-; disable smooth-scroll list boxes
-; enable smooth edges of screen fonts
 ; 100% dpi scaling
 ; disable fix scaling for apps
 ; disable menu show delay
 [HKEY_CURRENT_USER\Control Panel\Desktop]
-"UserPreferencesMask"=hex(2):90,12,03,80,10,00,00,00
-"FontSmoothing"="2"
 "LogPixels"=dword:00000060
 "Win8DpiScaling"=dword:00000001
 "EnablePerProcessSystemDPI"=dword:00000000
@@ -4309,10 +4113,6 @@ Windows Registry Editor Version 5.00
 "NoInstrumentation"=-
 "HideSCAMeetNow"=dword:00000001
 
-; remove search from taskbar
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Search]
-"SearchboxTaskbarMode"=dword:00000000
-
 ; disable use dynamic lighting on my devices
 ; disable compatible apps in the forground always control lighting
 ; disable match my windows accent color
@@ -4411,9 +4211,6 @@ Windows Registry Editor Version 5.00
 "SystemPaneSuggestionsEnabled"=dword:00000000
 
 ; OTHER
-; remove gallery
-[HKEY_CURRENT_USER\Software\Classes\CLSID\{e88865ea-0e1c-4e20-9aa6-edcd0212c87c}]
-"System.IsPinnedToNameSpaceTree"=dword:00000000
 
 ; restore the classic context menu
 [HKEY_CURRENT_USER\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32]
